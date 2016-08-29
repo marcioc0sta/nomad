@@ -44,7 +44,7 @@
         </form>
       </div>
       <spinner is-loading="nasaData.isLoading" message="Loading..." ></spinner>
-      <div class="content" ng-if="error != true">
+      <div class="content" ng-if="error != true && nasaData.isLoading == false">
         <div class="img-of-the-day">
           <img ng-src="{{apod.hdurl}}" alt="" width="100%"/>
         </div>
