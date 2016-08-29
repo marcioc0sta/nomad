@@ -1,0 +1,23 @@
+@media screen and (max-width: 1024px) and (min-width: 320px) {
+  .navbar-toggle { margin: 20px 20px 0 20px; }
+  .main-search {
+    margin: 0;
+    padding: 0;
+  }
+  .wgt-search .main-search .form-control {
+    margin: 0 0 20px 0;
+    width: 100%;
+  }
+  .wgt-search .btn { width: 49%; }
+  .wgt-resturant-signup-call h2:before,
+  .wgt-resturant-signup-call h2:after { display: none; }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+  .main-search { width: 100%; }
+  .wgt-search .btn { width: auto; }
+  .wgt-search .main-search .form-control {
+    margin: 0;
+    width: 80%;
+  }
+}

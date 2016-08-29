@@ -1,0 +1,20 @@
+$(function () {
+  // tooltip activate
+  $('[data-toggle="tooltip"]').tooltip();
+
+  // display search filters
+  $('#filter-trigger').on('click', function(){
+    $('.filters-row').toggleClass('hidden');
+  });
+
+  //get today data
+  var d = new Date();
+  var month = d.getMonth()+1;
+  var day = d.getDate();
+  var today = d.getFullYear() + '-' +
+      ((''+month).length<2 ? '0' : '') + month + '-' +
+      ((''+day).length<2 ? '0' : '') + day;
+
+  $('#search').val(today);
+  $('#search').mask('0000-00-00');
+});

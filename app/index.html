@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html ng-app="nomad">
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv=X-UA-Compatible>
+    <meta content="width=device-width,initial-scale=1" name=viewport>
+    <title>Nomad</title>
+    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="dist/css/styles.css" media="screen" title="no title" charset="utf-8">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+  </head>
+  <body>
+    <header class="clearfix">
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand" href="#">Nomad</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main ng-controller="mainController">
+      <div class="wgt wgt-search">
+        <div class="container">
+          <p class="wgt-title">Date</p>
+        </div>
+        <form class="form-inline" ng-submit="onSubmit()">
+          <div class="search-row">
+            <div class="container">
+              <div class="main-search form-group col-lg-12 alpha">
+                <input class="form-control" id="search" type="text" name="name" ng-model="date" placeholder="Insira uma data" value="" autofocus>
+                <button class="btn" type="submit" name="button">Buscar</button>
+                <!-- <a class="btn" id="filter-trigger" data-toggle="tooltip" data-placement="top" title="Filtrar" href="#"><i class="fa fa-filter"></i></a> -->
+              </div>
+            </div>
+          </div>
+          <div class="filters-row hidden">
+          </div>
+        </form>
+      </div>
+      <div class="loading-spiner-holder" data-loading >teste</div>
+      <div class="img-of-the-day">
+        <img ng-if="isError == false" ng-src="{{nasa.hdurl}}" alt="" width="100%"/>
+      </div>
+      <div class="content">
+        <div class="container">
+          <p ng-if="isError == false">
+            {{nasa.explanation}}
+          </p>
+          <div class="alert alert-warning" ng-if="isError == true">
+            <p>{{errorMsg}}</p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="container">
+        <div class="text-center">
+          <small>nomad</small>
+        </div>
+      </div>
+    </footer>
+    <script src="libs/jquery/dist/jquery.min.js"></script>
+    <script src="libs/angular/angular.min.js"></script>
+    <script src="libs/angular-resource/angular-resource.min.js"></script>
+    <script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="libs/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/controllers/mainController.js"></script>
+    <script src="js/nomad.js"></script>
+  </body>
+</html>

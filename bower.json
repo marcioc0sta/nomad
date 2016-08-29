@@ -1,0 +1,27 @@
+{
+  "name": "nomad",
+  "description": "",
+  "main": "gulpfile.js",
+  "authors": [
+    "marcioc0sta <marciocst2@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/marcioc0sta/nomad.git",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "fontawesome#^4.6.3",
+    "angular": "^1.5.8",
+    "jquery-mask-plugin": "^1.14.0"
+  },
+  "resolutions": {
+    "bootstrap": "^3.3.7"
+  }
+}

@@ -1,0 +1,43 @@
+@mixin input ($color: $black, $font-color: $black) {
+  background: none;
+  border: 0;
+  border-bottom: solid 1px $color;
+  border-radius: 0;
+  box-shadow: none;
+  color: $font-color;
+  &:focus {
+    box-shadow: none;
+    border-color: lighten($color, 25%);
+  }
+}
+
+@mixin button ($bg-color: $red, $font-color: #fff, $font-size: 16px, $padding: 10px 15px, $shadow-color: $grey) {
+  background: $bg-color;
+  border-radius: 0;
+  box-shadow: 3px 3px 3px $shadow-color;
+  color: $font-color;
+  font-size: $font-size;
+  padding: $padding;
+  &:hover {
+    background: lighten($bg-color, 25%);
+    color: darken($font-color, 15%);
+    @if $bg-color == #fff {
+      box-shadow: none;
+    }
+  }
+}
+
+@mixin transition ($el: all, $time: 1s, $effect: ease-in-out) {
+  -webkit-transition: $el $time $effect;
+  -moz-transition: $el $time $effect;
+  -o-transition: $el $time $effect;
+  transition: $el $time $effect;
+}
+
+@mixin pattern {
+  background-color: $brown;
+  background-image: radial-gradient(closest-side, transparent 78%, rgba(0,0,0,.3) 69%),
+  radial-gradient(closest-side, transparent 78%, rgba(0,0,0,.3) 69%);
+  background-size: 40px 40px;
+  background-position:0 0, 20px 20px;
+}

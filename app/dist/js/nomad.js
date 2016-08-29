@@ -1,0 +1,1 @@
+$(function(){$('[data-toggle="tooltip"]').tooltip(),$("#filter-trigger").on("click",function(){$(".filters-row").toggleClass("hidden")});var t=new Date,e=t.getMonth()+1,l=t.getDate(),a=t.getFullYear()+"-"+((""+e).length<2?"0":"")+e+"-"+((""+l).length<2?"0":"")+l;$("#search").val(a),$("#search").mask("0000-00-00")});
