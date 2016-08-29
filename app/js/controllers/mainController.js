@@ -1,5 +1,5 @@
 app.controller('mainController', function($scope, $http){
-  $scope.nasa = {};
+  $scope.apod = {};
   $scope.errorMsg = '';
   $scope.date = '';
   $scope.isError = false;
@@ -9,7 +9,7 @@ app.controller('mainController', function($scope, $http){
     $http.get("https://api.nasa.gov/planetary/apod?api_key=" + key + "&date=" + $scope.date)
     .then(function success(result) {
       $scope.isError = false;
-      $scope.nasa = result.data;
+      $scope.apod = result.data;
       console.log(result.statusText);
     }, function error(result) {
       console.log(result.statusText);

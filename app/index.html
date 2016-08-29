@@ -45,12 +45,12 @@
       </div>
       <div class="loading-spiner-holder" data-loading >teste</div>
       <div class="img-of-the-day">
-        <img ng-if="isError == false" ng-src="{{nasa.hdurl}}" alt="" width="100%"/>
+        <img ng-if="isError == false" ng-src="{{apod.hdurl}}" alt="" width="100%"/>
       </div>
       <div class="content">
         <div class="container">
           <p ng-if="isError == false">
-            {{nasa.explanation}}
+            {{apod.explanation}}
           </p>
           <div class="alert alert-warning" ng-if="isError == true">
             <p>{{errorMsg}}</p>
