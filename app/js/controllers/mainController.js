@@ -1,20 +1,16 @@
-app.controller('mainController', function($scope, $http){
-  $scope.apod = {};
-  $scope.errorMsg = '';
+app.controller('mainController', function($scope, nasaService){
+  $scope.nasaData = nasaService;
   $scope.date = '';
-  $scope.isError = false;
-  var key = 'IRhGAGSwYdv0y2WC77sm5XzuukTv93LkPCfRILcD';
-
+  $scope.errorMsg = 'Tente uma data no formato ano/mês/dia entre 1995 e o dia de hoje';
   $scope.onSubmit = function (){
-    $http.get("https://api.nasa.gov/planetary/apod?api_key=" + key + "&date=" + $scope.date)
-    .then(function success(result) {
-      $scope.isError = false;
-      $scope.apod = result.data;
-      console.log(result.statusText);
-    }, function error(result) {
-      console.log(result.statusText);
-      $scope.isError = true;
-      $scope.errorMsg = 'Escolha uma data a partir de 1995 com o formato: Ano/mês/dia';
+    nasaService.date = $scope.date;
+    $scope.nasaData.loadData().then(function(data){
+      $scope.apod = data;
+      $scope.nasaData.isLoading = false;
+    }, function error(data){
+      $scope.error = true;
+      $scope.nasaData.isLoading = false;
     });
+
   };
 });

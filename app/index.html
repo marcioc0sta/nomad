@@ -43,18 +43,20 @@
           </div>
         </form>
       </div>
-      <div class="loading-spiner-holder" data-loading >teste</div>
-      <div class="img-of-the-day">
-        <img ng-if="isError == false" ng-src="{{apod.hdurl}}" alt="" width="100%"/>
-      </div>
-      <div class="content">
+      <spinner is-loading="nasaData.isLoading" message="Loading..." ></spinner>
+      <div class="content" ng-if="error != true">
+        <div class="img-of-the-day">
+          <img ng-src="{{apod.hdurl}}" alt="" width="100%"/>
+        </div>
         <div class="container">
-          <p ng-if="isError == false">
+          <p>
             {{apod.explanation}}
           </p>
-          <div class="alert alert-warning" ng-if="isError == true">
-            <p>{{errorMsg}}</p>
-          </div>
+        </div>
+      </div>
+      <div class="alert alert-warning" ng-if="error == true">
+        <div class="container">
+          <p>{{errorMsg}}</p>
         </div>
       </div>
     </main>

@@ -46,71 +46,10 @@ header .navbar { margin: 0; }
   }
 }
 
-.wgt-suggestions {
-  h3 { font-size: 20px; }
-  .suggestion-item {
-    @include transition($time: .3s);
-    border: none;
-    border-radius: 0;
-    padding: 5px;
-    img { margin-top: 5px; }
-    &:hover {
-      @include transition($time: .3s);
-      box-shadow: 0 5px 5px #eaeaea;
-      transform: scaleX(1.05) scaleY(1.05);
-    }
-    a {
-      color: $black;
-      &:hover {
-        color: $brown;
-        text-decoration: none;
-      }
-    }
-    .btn {
-      @include button ($bg-color: #fff, $font-color: $brown, $font-size: 14px, $shadow-color: #fff);
-      text-transform: uppercase;
-    }
-  }
-}
-
-.wgt-resturant-signup-call {
-  background: url( $img-path + 'table-restaurant.jpg' ) $no-repeat;
-  color: #fff;
-  margin: 30px 0;
-  padding: 60px 0;
-  h2,p { text-shadow: 1px 1px 1px #000; }
-  p { font: 300 18px $thin-font; }
-
-  h2 {
-    margin-bottom: 20px;
-    position: relative;
-    &:before,
-    &:after {
-      background: #fff;
-      content: "";
-      display: block;
-      height: 1px;
-      position: absolute;
-      top: 17px;
-      width: 31%;
-    }
-    &:before { left: 0; }
-    &:after { right: 0; }
-  }
-
-  .btn {
-    @include button($bg-color: #fff, $font-color: $black, $shadow-color: $black);
-    margin: 20px 0 0;
-  }
+.spinner {
+  display: block;
+  margin: 60px auto;
+  width: 70px;
 }
 
 footer { padding: 60px 0; }
-.logo-footer {
-  background: url( $img-path + 'dish-footer.svg' ) $no-repeat;
-  display: block;
-  height: 30px;
-  margin: 0 auto;
-  overflow: hidden;
-  text-indent: -999px;
-  width: 30px;
-}
