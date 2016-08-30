@@ -35,7 +35,6 @@
               <div class="main-search form-group col-lg-12 alpha">
                 <input class="form-control" id="search" type="text" name="name" ng-model="date" placeholder="Insira uma data" value="" autofocus>
                 <button class="btn" type="submit" name="button">Buscar</button>
-                <!-- <a class="btn" id="filter-trigger" data-toggle="tooltip" data-placement="top" title="Filtrar" href="#"><i class="fa fa-filter"></i></a> -->
               </div>
             </div>
           </div>
@@ -46,7 +45,7 @@
       <spinner is-loading="nasaData.isLoading" message="Loading..." ></spinner>
       <div class="content" ng-if="error != true && nasaData.isLoading == false">
         <div class="img-of-the-day">
-          <img ng-src="{{apod.hdurl}}" alt="" width="100%"/>
+          <img ng-src="{{apod.url}}" alt="" width="100%"/>
         </div>
         <div class="container">
           <p>

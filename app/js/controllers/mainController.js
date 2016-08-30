@@ -1,8 +1,9 @@
 app.controller('mainController', function($scope, nasaService){
   $scope.nasaData = nasaService;
   $scope.date = '';
-  $scope.errorMsg = 'Tente uma data no formato ano/mês/dia entre 1995 e o dia de hoje';
-  $scope.onSubmit = function (){
+  $scope.errorMsg = 'Try american date format: YYYY/MM/DD. Put a date between 1995 and today';
+
+  function loadContent(){
     nasaService.date = $scope.date;
     $scope.nasaData.loadData().then(function(data){
       $scope.apod = data;
@@ -11,6 +12,13 @@ app.controller('mainController', function($scope, nasaService){
       $scope.error = true;
       $scope.nasaData.isLoading = false;
     });
+  }
 
+  $scope.onSubmit = function (){
+    loadContent();
   };
+
+  if (!$scope.error) {
+    loadContent();
+  }
 });
