@@ -1,4 +1,4 @@
-# Nomad
+# Nomad Project
 Is a serie of side projects using angular and the nasa api. This specific project uses the APOD (Astronomy Picture of the Day).
 
 The project is quite simple, put a date and receive an image and the content. More improvements may be on the way.
