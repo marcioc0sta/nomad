@@ -13,7 +13,7 @@ header {
   background: -moz-linear-gradient(top,  rgba(0,0,0,0.25) 0%, rgba(0,0,0,0) 100%);
   background: -webkit-linear-gradient(top,  rgba(0,0,0,0.25) 0%,rgba(0,0,0,0) 100%);
   background: linear-gradient(to bottom,  rgba(0,0,0,0.25) 0%,rgba(0,0,0,0) 100%);
-  position: fixed;
+  position: absolute;
   top: 0;
   width: 100%;
   .logo { margin: 30px 0; }
@@ -37,7 +37,6 @@ header {
   }
 
   .main-search {
-    margin-top: 20px;
     .form-control {
       @include input($color: rgba(255,255,255,0), $font-color: #fff, $border-color: #fff);
       width: 92%;
@@ -50,6 +49,7 @@ header {
   .error-msg {
     background: rgba(0,0,0, .5);
     border-radius: 4px;
+    margin: 20px 0;
     padding: 5px 15px;
     p { margin: 0; }
   }
@@ -107,6 +107,15 @@ header {
     0% { transform: rotateZ(0deg) translate3d(0,0,0); }
     100% { transform: rotateZ(360deg) translate3d(0,0,0); }
   }
+}
+
+.apod-description {
+  @include papper-shadow;
+  background: #fff;
+  border-radius: 4px;
+  position: relative;
+  padding: 10px 30px 30px 30px;
+  top: -120px;
 }
 
 footer { padding: 60px 0; }
