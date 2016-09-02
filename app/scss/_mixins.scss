@@ -1,13 +1,12 @@
 @mixin input ($color: $black, $font-color: $black, $border-color: $black) {
   background: none;
   border: 0;
-  border-bottom: solid 1px $color;
+  border-bottom: solid 1px $border-color;
   border-radius: 0;
   box-shadow: none;
   color: $font-color;
   &:focus {
     box-shadow: none;
-    border-color: lighten($border-color, 25%);
   }
 }
 

@@ -22,21 +22,25 @@
             <p class="wgt-title">Date <small>(american format)</small></p>
           </div>
           <form class="form-inline" ng-submit="onSubmit()">
-            <div class="search-row">
+            <div class="container">
+              <div class="error-msg" ng-if="error == true">
+                <p ng-if="errorCode == 400" class="text-danger">{{error400}}</p>
+                <p ng-if="errorCode == 500" class="text-danger">{{error500}}</p>
+              </div>
+            </div>
+            <div class="search-row" >
               <div class="container">
-                <div class="main-search form-group col-lg-12 alpha">
+                <div class="main-search form-group col-lg-12 alpha omega" ng-class="error ? 'has-error' : true">
                   <input class="form-control" id="search" type="text" name="name" ng-model="date" placeholder="Insert a date" value="" autofocus>
                   <button class="btn" type="submit" name="button">Search</button>
                 </div>
               </div>
             </div>
-            <div class="filters-row hidden">
-            </div>
           </form>
         </div>
+        <spinner is-loading="nasaData.isLoading" message="Loading..." ></spinner>
       </header>
-      <spinner is-loading="nasaData.isLoading" message="Loading..." ></spinner>
-      <div class="content" ng-if="error != true && nasaData.isLoading == false">
+      <div class="content" ng-if="nasaData.isLoading == false">
         <div class="img-of-the-day">
           <div ng-if="apod.media_type != 'video'" back-img="{{apod.hdurl}}"></div>
           <div ng-if="apod.media_type == 'video'" >
@@ -47,11 +51,6 @@
           <p>
             {{apod.explanation}}
           </p>
-        </div>
-      </div>
-      <div class="alert alert-warning" ng-if="error == true">
-        <div class="container">
-          <p>{{errorMsg}}</p>
         </div>
       </div>
     </main>

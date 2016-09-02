@@ -32,15 +32,26 @@ header {
     @include input($color: $black, $font-color: $black);
     font-size: 25px;
     width: 88%;
-    &::-webkit-input-placeholder { color: $black !important; }
+    &::-webkit-input-placeholder { color: #fff !important; }
     option { color: $black; }
   }
 
   .main-search {
+    margin-top: 20px;
     .form-control {
       @include input($color: rgba(255,255,255,0), $font-color: #fff, $border-color: #fff);
-      border-bottom: solid 1px #fff;
+      width: 92%;
      }
+     &.has-error .form-control {
+       @include input($font-color: #fff, $border-color: $red);
+     }
+  }
+
+  .error-msg {
+    background: rgba(0,0,0, .5);
+    border-radius: 4px;
+    padding: 5px 15px;
+    p { margin: 0; }
   }
 
   .btn { @include button($bg-color: #fff, $font-color: $black); }

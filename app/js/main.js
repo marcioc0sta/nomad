@@ -9,6 +9,7 @@ app.service('nasaService', function(nasaData){
   var self = {
     'apod': {},
     'date': '',
+    'responseCode': '',
     'isLoading': false,
     'loadData': function(){
       if (!self.isLoading) {
@@ -18,8 +19,17 @@ app.service('nasaService', function(nasaData){
         };
         return nasaData.get(params, function(data){
           self.apod = data;
-          return data;
-        }).$promise;
+        }).$promise.catch(function(response){
+          switch (response.status) {
+            case 400:
+              self.responseCode = '400';
+              break;
+            case 500:
+              self.responseCode = '500';
+              break;
+          }
+          self.apod = data;
+        });
       }
     }
   };
@@ -27,7 +37,7 @@ app.service('nasaService', function(nasaData){
 });
 
 app.filter('trustAsResourceUrl', ['$sce', function($sce) {
-    return function(val) {
-        return $sce.trustAsResourceUrl(val);
-    };
+  return function(val) {
+    return $sce.trustAsResourceUrl(val);
+  };
 }]);
