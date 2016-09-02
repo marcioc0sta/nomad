@@ -26,26 +26,8 @@ app.service('nasaService', function(nasaData){
   return self;
 });
 
-app.directive('spinner', function(){
-  return {
-    'restrict': 'E',
-    'templateUrl': '../templates/spinner.html',
-    'scope': {
-			'isLoading': '=',
-			'message': '@'
-		}
-  };
-});
-
-app.directive('backImg', function(){
-  return function(scope, element, attrs){
-    var url = attrs.backImg;
-    element.css({
-        'background-image': 'url(' + url +')',
-        'background-size' : 'cover',
-         
-        'height': '100vh',
-        'width': '100%',
-    });
-  };
-});
+app.filter('trustAsResourceUrl', ['$sce', function($sce) {
+    return function(val) {
+        return $sce.trustAsResourceUrl(val);
+    };
+}]);

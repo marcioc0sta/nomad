@@ -15,11 +15,11 @@
     <main ng-controller="mainController">
       <header>
         <div class="text-center">
-          <img src="dist/img/nomad.svg" alt="" width="150" />
+          <img class="logo" src="dist/img/nomad.svg" alt="" width="80" />
         </div>
         <div class="wgt wgt-search">
           <div class="container">
-            <p class="wgt-title">Date</p>
+            <p class="wgt-title">Date <small>(american format)</small></p>
           </div>
           <form class="form-inline" ng-submit="onSubmit()">
             <div class="search-row">
@@ -35,11 +35,13 @@
           </form>
         </div>
       </header>
-
       <spinner is-loading="nasaData.isLoading" message="Loading..." ></spinner>
       <div class="content" ng-if="error != true && nasaData.isLoading == false">
         <div class="img-of-the-day">
-          <div back-img="{{apod.hdurl}}"></div>
+          <div ng-if="apod.media_type != 'video'" back-img="{{apod.hdurl}}"></div>
+          <div ng-if="apod.media_type == 'video'" >
+            <iframe ng-src="{{apod.url + '&autoplay=1' + '&controls=0' | trustAsResourceUrl}}"></iframe>
+          </div>
         </div>
         <div class="container">
           <p>
@@ -67,6 +69,7 @@
     <script src="libs/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/controllers/mainController.js"></script>
+    <script src="js/directives/directives.js"></script>
     <script src="js/nomad.js"></script>
   </body>
 </html>

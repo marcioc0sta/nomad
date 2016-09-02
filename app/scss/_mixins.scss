@@ -1,4 +1,4 @@
-@mixin input ($color: $black, $font-color: $black) {
+@mixin input ($color: $black, $font-color: $black, $border-color: $black) {
   background: none;
   border: 0;
   border-bottom: solid 1px $color;
@@ -7,7 +7,7 @@
   color: $font-color;
   &:focus {
     box-shadow: none;
-    border-color: lighten($color, 25%);
+    border-color: lighten($border-color, 25%);
   }
 }
 

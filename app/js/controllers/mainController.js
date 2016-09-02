@@ -1,4 +1,4 @@
-app.controller('mainController', function($scope, nasaService){
+app.controller('mainController', function($scope, nasaService, $sce){
   $scope.nasaData = nasaService;
   $scope.date = '';
   $scope.errorMsg = 'Try american date format: YYYY/MM/DD. Put a date between 1995 and today';
