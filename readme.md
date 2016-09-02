@@ -6,8 +6,9 @@ The project is quite simple, put a date and receive an image and the content. Mo
 
 ## Setup
 1. Install node js in your machine;
-2. Run `npm install -g bower` then `npm install`;
-3. Run `gulp`;
-4. Access `localhost:8080`.
+2. Run `npm install gulp`
+3. Run `npm install -g bower` then `npm install`;
+4. Run `gulp`;
+5. Access `localhost:8080`.
 
 Suggestions, enhancements and any constructive criticism are more than welcome.
