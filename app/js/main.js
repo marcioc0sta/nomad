@@ -19,6 +19,7 @@ app.service('nasaService', function(nasaData){
         };
         return nasaData.get(params, function(data){
           self.apod = data;
+          return data;
         }).$promise.catch(function(response){
           switch (response.status) {
             case 400:

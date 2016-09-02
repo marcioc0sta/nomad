@@ -42,7 +42,7 @@
       </header>
       <div class="content" ng-if="nasaData.isLoading == false">
         <div class="img-of-the-day">
-          <div ng-if="apod.media_type != 'video'" back-img="{{apod.hdurl}}"></div>
+          <div ng-if="apod.media_type != 'video'" back-img="{{apod.url}}"></div>
           <div ng-if="apod.media_type == 'video'" >
             <iframe ng-src="{{apod.url + '&autoplay=1' + '&controls=0' | trustAsResourceUrl}}"></iframe>
           </div>
