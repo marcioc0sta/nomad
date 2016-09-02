@@ -8,7 +8,11 @@ p { font: 300 16px $thin-font; }
 .form-control { height: 46px; }
 iframe { max-width: 100% !important; }
 
-header .navbar { margin: 0; }
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
 
 .wgt-search {
   background: $black;

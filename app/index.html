@@ -12,36 +12,30 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
   </head>
   <body>
-    <header class="clearfix">
-      <nav class="navbar navbar-default">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-              <i class="fa fa-bars"></i>
-            </button>
-            <a class="navbar-brand" href="#">Nomad</a>
-          </div>
-        </div>
-      </nav>
-    </header>
     <main ng-controller="mainController">
-      <div class="wgt wgt-search">
-        <div class="container">
-          <p class="wgt-title">Date</p>
+      <header>
+        <div class="text-center">
+          <img src="dist/img/nomad.svg" alt="" width="150" />
         </div>
-        <form class="form-inline" ng-submit="onSubmit()">
-          <div class="search-row">
-            <div class="container">
-              <div class="main-search form-group col-lg-12 alpha">
-                <input class="form-control" id="search" type="text" name="name" ng-model="date" placeholder="Insira uma data" value="" autofocus>
-                <button class="btn" type="submit" name="button">Buscar</button>
+        <div class="wgt wgt-search">
+          <div class="container">
+            <p class="wgt-title">Date</p>
+          </div>
+          <form class="form-inline" ng-submit="onSubmit()">
+            <div class="search-row">
+              <div class="container">
+                <div class="main-search form-group col-lg-12 alpha">
+                  <input class="form-control" id="search" type="text" name="name" ng-model="date" placeholder="Insira uma data" value="" autofocus>
+                  <button class="btn" type="submit" name="button">Buscar</button>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="filters-row hidden">
-          </div>
-        </form>
-      </div>
+            <div class="filters-row hidden">
+            </div>
+          </form>
+        </div>
+      </header>
+
       <spinner is-loading="nasaData.isLoading" message="Loading..." ></spinner>
       <div class="content" ng-if="error != true && nasaData.isLoading == false">
         <div class="img-of-the-day">
