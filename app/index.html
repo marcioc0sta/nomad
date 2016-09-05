@@ -14,44 +14,37 @@
   </head>
   <body>
     <main ng-controller="mainController">
-      <header>
-        <div class="text-center">
-          <img class="logo" src="dist/img/nomad.svg" alt="" width="80" />
-        </div>
+      <div class="search-content col-lg-5">
+        <a class="content-toogle" title="toggle-content" href="#"><i class="fa fa-angle-left"></i></a>
+        <!-- <div class="text-center">
+          <img class="logo" src="dist/img/nomad.svg" alt="" width="60" />
+        </div> -->
         <div class="wgt wgt-search">
-          <div class="container">
-            <p class="wgt-title">Date <small>(american format)</small></p>
-          </div>
+          <p class="wgt-title">Date <small>(american format)</small></p>
           <form class="form-inline" ng-submit="onSubmit()">
-            <div class="container">
-              <div class="error-msg" ng-if="error == true">
-                <p ng-if="errorCode == 400" class="text-danger">{{error400}}</p>
-                <p ng-if="errorCode == 500" class="text-danger">{{error500}}</p>
-              </div>
+            <div class="error-msg" ng-if="error == true">
+              <p ng-if="errorCode == 400" class="text-danger">{{error400}}</p>
+              <p ng-if="errorCode == 500" class="text-danger">{{error500}}</p>
             </div>
             <div class="search-row" >
-              <div class="container">
-                <div class="main-search form-group col-lg-12 alpha omega" ng-class="error ? 'has-error' : true">
-                  <input class="form-control" id="search" type="text" name="name" ng-model="date" placeholder="Insert a date" value="" autofocus>
-                  <button class="btn" type="submit" name="button">Search</button>
-                </div>
+              <div class="main-search form-group" ng-class="error ? 'has-error' : true">
+                <input class="form-control" id="search" type="text" name="name" ng-model="date" placeholder="Insert a date" value="" autofocus>
+                <!-- <button class="btn" type="submit" name="button">Search</button> -->
               </div>
             </div>
           </form>
         </div>
+        <div class="apod-description" ng-if="nasaData.isLoading == false">
+          <h2>History of the day</h2>
+          <p>{{apod.explanation}}</p>
+        </div>
         <spinner is-loading="nasaData.isLoading" message="Loading..." ></spinner>
-      </header>
+      </div>
       <div class="content" ng-if="nasaData.isLoading == false">
         <div class="img-of-the-day">
           <div ng-if="apod.media_type != 'video'" back-img="{{apod.url}}"></div>
           <div ng-if="apod.media_type == 'video'" >
-            <iframe ng-src="{{apod.url + '&autoplay=1' + '&controls=0' | trustAsResourceUrl}}"></iframe>
-          </div>
-        </div>
-        <div class="container">
-          <div class="apod-description">
-            <h2>History of the day</h2>
-            <p>{{apod.explanation}}</p>
+            <iframe ng-src="{{apod.url | trustAsResourceUrl}}"></iframe>
           </div>
         </div>
       </div>

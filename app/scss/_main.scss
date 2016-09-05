@@ -1,45 +1,53 @@
 body {
   color: $black;
   font: 400 16px $highlited-font;
+  overflow-x: hidden;
 }
 p { font: 300 16px $text-font; }
 .tooltip-inner { background: $black; }
 .tooltip.left .tooltip-arrow { border-left-color: $black; }
-.form-control { height: 46px; }
+.form-control { height: 80px; }
 
 iframe { width: 100% !important; }
 
-header {
-  background: -moz-linear-gradient(top,  rgba(0,0,0,0.25) 0%, rgba(0,0,0,0) 100%);
-  background: -webkit-linear-gradient(top,  rgba(0,0,0,0.25) 0%,rgba(0,0,0,0) 100%);
-  background: linear-gradient(to bottom,  rgba(0,0,0,0.25) 0%,rgba(0,0,0,0) 100%);
+.search-content {
+  background: $black;
+  height: 43vw;
   position: absolute;
   top: 0;
-  width: 100%;
-  .logo { margin: 30px 0; }
+
+  .content-toogle {
+    color: lighten($black, 20%);
+    display: block;
+    font-size: 30px;
+    height: 40px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    text-align: center;
+    width: 40px;
+    &:hover {
+      color: #fff;
+      cursor: pointer;
+    }
+  }
 }
 
 .wgt-search {
   font: 300 16px $thin-font;
   padding: 30px 0 0 0;
   .wgt-title {
-    color: #fff;
+    color: rgba(255,255,255,0.45);
     font: 400 16px $highlited-font;
     padding-left: 13px;
   }
 
-  .form-control {
-    @include input($color: $black, $font-color: $black);
-    font-size: 25px;
-    width: 88%;
-    &::-webkit-input-placeholder { color: #fff !important; }
-    option { color: $black; }
-  }
-
   .main-search {
     .form-control {
-      @include input($color: rgba(255,255,255,0), $font-color: #fff, $border-color: #fff);
-      width: 92%;
+      @include input($color: rgba(255,255,255,0), $font-color: #7CCCC1, $border-color: rgba(255,255,255,0.25));
+      font: 700 85px $highlited-font;
+      width: 100%;
+      &::-webkit-input-placeholder { color: #7CCCC1 !important; }
      }
      &.has-error .form-control {
        @include input($font-color: #fff, $border-color: $red);
@@ -64,7 +72,7 @@ header {
   }
 }
 
-.img-of-the-day iframe { height: 35vw; }
+.img-of-the-day iframe { height: 43.2vw; }
 
 .spinner {
   display: block;
@@ -110,16 +118,17 @@ header {
 }
 
 .apod-description {
-  @include papper-shadow;
-  background: #fff;
-  border-radius: 4px;
   position: relative;
-  padding: 10px 30px 30px 30px;
-  top: -30px;
+  padding: 0 10px 10px 10px;
+  h2 {
+    color: #fff;
+    font: 46px $thin-font;
+    margin: 0 0 15px 0;
+  }
   p {
-    color: $text;
+    color: rgba(255,255,255,0.85);
     font-size: 18px;
   }
 }
 
-footer { padding: 60px 0; }
+footer { padding: 30px 0; }

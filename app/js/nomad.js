@@ -17,4 +17,10 @@ $(function () {
 
   $('#search').val(today);
   $('#search').mask('0000-00-00');
+
+  // content-toogle
+  $('.content-toogle').on('click', function(){
+    $(this).parent().toggleClass('not-visible');
+    $(this).toggleClass('text-rotate')
+  });
 });
