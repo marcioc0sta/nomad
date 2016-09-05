@@ -13,4 +13,5 @@ The project is quite simple, put a date and receive an image and the content. Mo
 6. Access `localhost:8080`.
 
 live on: http://spacenomad.herokuapp.com/
+
 Suggestions, enhancements and any constructive criticism are more than welcome.
