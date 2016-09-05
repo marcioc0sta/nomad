@@ -1,0 +1,6 @@
+{
+  "name": "Nomad",
+  "description": "A series of personal projects using angular and the NASA's api",
+  "repository": "https://github.com/marcioc0sta/nomad",
+  "keywords": ["node", "express", "static"],
+}
