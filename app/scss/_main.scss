@@ -19,9 +19,7 @@ iframe { width: 100% !important; }
   left: 0;
   top: 0;
 
-  &.not-visible {
-    left: -41%;
-  }
+  &.not-visible { left: -41%; }
 
   .source-link,
   .content-toogle {
@@ -51,6 +49,7 @@ iframe { width: 100% !important; }
     font-size: 20px;
     line-height: 40px;
     top: 40px;
+    &:hover { background: #7CCCC1; }
   }
 }
 
