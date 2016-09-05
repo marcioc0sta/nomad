@@ -29,6 +29,6 @@
   },
   "scripts": {
     "start": "node index.js",
-    "heroku-postbuild": "bower install && gulp"
+    "heroku-postbuild": "npm install && npm install bower && npm install gulp && bower install && gulp"
   }
 }
