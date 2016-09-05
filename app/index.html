@@ -16,9 +16,7 @@
     <main ng-controller="mainController">
       <div class="search-content col-lg-5">
         <a class="content-toogle" title="toggle-content" href="#"><i class="fa fa-angle-left"></i></a>
-        <!-- <div class="text-center">
-          <img class="logo" src="dist/img/nomad.svg" alt="" width="60" />
-        </div> -->
+        <a class="source-link" title="Source link" ng-if="apod.media_type != 'video'" href="{{apod.hdurl}}"><i class="fa fa-link"></i></a>
         <div class="wgt wgt-search">
           <p class="wgt-title">Date <small>(american format)</small></p>
           <form class="form-inline" ng-submit="onSubmit()">
@@ -28,8 +26,7 @@
             </div>
             <div class="search-row" >
               <div class="main-search form-group" ng-class="error ? 'has-error' : true">
-                <input class="form-control" id="search" type="text" name="name" ng-model="date" placeholder="Insert a date" value="" autofocus>
-                <!-- <button class="btn" type="submit" name="button">Search</button> -->
+                <input class="form-control" id="search" type="text" name="name" ng-model="date" placeholder="Put a date" value="" autofocus>
               </div>
             </div>
           </form>
