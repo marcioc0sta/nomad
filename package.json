@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/marcioc0sta/nomad.git#readme",
   "dependencies": {
+    "express": "^4.14.0",
     "gulp": "^3.9.1",
     "gulp-connect": "^5.0.0",
     "gulp-htmlmin": "^2.0.0",
