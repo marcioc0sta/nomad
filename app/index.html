@@ -44,7 +44,7 @@
         <div class="img-of-the-day">
           <div ng-if="apod.media_type != 'video'" back-img="{{apod.url}}"></div>
           <div ng-if="apod.media_type == 'video'" >
-            <iframe ng-src="{{apod.url | trustAsResourceUrl}}"></iframe>
+            <iframe ng-src="{{apod.url  + '&autoplay=1' + '&controls=0' | trustAsResourceUrl}}"></iframe>
           </div>
         </div>
       </div>
