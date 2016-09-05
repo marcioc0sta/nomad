@@ -5,6 +5,9 @@
     <meta content="IE=edge" http-equiv=X-UA-Compatible>
     <meta content="width=device-width,initial-scale=1" name=viewport>
     <title>Nomad</title>
+    <style media="screen">
+      [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak { display: none !important; }
+    </style>
     <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" href="dist/css/styles.css" media="screen" title="no title" charset="utf-8">
@@ -12,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Andada" rel="stylesheet">
   </head>
-  <body>
+  <body ngCloak>
     <main ng-controller="mainController">
       <div class="search-content col-lg-5">
         <a class="content-toogle" title="toggle-content" href="#"><i class="fa fa-angle-left"></i></a>
