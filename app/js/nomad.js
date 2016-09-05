@@ -21,6 +21,6 @@ $(function () {
   // content-toogle
   $('.content-toogle').on('click', function(){
     $(this).parent().toggleClass('not-visible');
-    $(this).toggleClass('text-rotate')
+    $(this).toggleClass('text-rotate');
   });
 });

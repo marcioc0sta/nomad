@@ -16,7 +16,7 @@ app.directive('backImg', function(){
         'background-image': 'url(' + url +')',
         'background-size' : 'cover',
         'background-position' : 'center',
-        'height': '43vw',
+        'height': '86.6vh',
         'width': '100%',
     });
   };

@@ -2,7 +2,7 @@ app.controller('mainController', function($scope, nasaService, $sce){
   $scope.nasaData = nasaService;
   $scope.date = '';
   $scope.errorCode = '';
-  $scope.error400 = 'You typed something wrong, check if your date is in correct format (YYYY/MM/DD)';
+  $scope.error400 = 'Shomething is wrong, check date format (YYYY/MM/DD)';
   $scope.error500 = 'Something is going wrong with the server, please, try again later';
 
   function loadContent(){
