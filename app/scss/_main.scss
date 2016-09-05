@@ -13,6 +13,7 @@ iframe { width: 100% !important; }
 .search-content {
   @include transition($time: .3s, $effect: linear);
   background: $black;
+  opacity: .95;
   height: 86.6vh;
   position: absolute;
   left: 0;
@@ -146,4 +147,11 @@ iframe { width: 100% !important; }
   }
 }
 
-footer { padding: 30px 0; }
+footer {
+  padding: 20px 0;
+  small {
+    color: $text;
+    font-size: 11px;
+    margin: 0 0 0 10px;
+  }
+}
