@@ -15,7 +15,7 @@
   "bugs": {
     "url": "https://github.com/marcioc0sta/nomad.git"
   },
-  "homepage": "https://github.com/marcioc0sta/nomad.git#readme",
+  "homepage": "http://spacenomad.herokuapp.com/",
   "dependencies": {
     "express": "^4.14.0",
     "gulp": "^3.9.1",
