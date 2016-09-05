@@ -16,7 +16,8 @@ $(function () {
       ((''+day).length<2 ? '0' : '') + day;
 
   $('#search').val(today);
-  $('#search').mask('0000-00-00');
+  
+  $('#search').mask("9999-99-99", {placeholder: 'YYYY/MM/DD' });
 
   // content-toogle
   $('.content-toogle').on('click', function(){
