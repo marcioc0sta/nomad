@@ -32,6 +32,6 @@ $(function () {
     }
   });
 
-  $("body").swipe( {fingers:2} );
+  $("body").swipe( {fingers:1, allowPageScroll:"auto"} );
 
 });
