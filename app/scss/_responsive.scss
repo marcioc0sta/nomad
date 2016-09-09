@@ -1,23 +1,32 @@
 @media screen and (max-width: 1024px) and (min-width: 320px) {
-  .navbar-toggle { margin: 20px 20px 0 20px; }
-  .main-search {
-    margin: 0;
-    padding: 0;
+  body { font-size: 90%; }
+  .wgt-search {
+    .search-row { padding-bottom: 20px; }
+    .form-group { margin: 0; }
+    .form-control { font-size: 2.5em; }
   }
-  .wgt-search .main-search .form-control {
-    margin: 0 0 20px 0;
-    width: 100%;
+
+  .search-content { height: 100vh; }
+
+  .img-of-the-day {
+    .image { height: 100vh; }
   }
-  .wgt-search .btn { width: 49%; }
-  .wgt-resturant-signup-call h2:before,
-  .wgt-resturant-signup-call h2:after { display: none; }
+
+  .search-content .source-link,
+  .search-content .content-toogle {
+    right: 0;
+  }
+
+  .search-content.not-visible {
+    left: -100%;
+    .source-link,
+    .content-toogle {
+      right: -4rem;
+    }
+  }
+
 }
 
 @media screen and (max-width: 1024px) and (min-width: 768px) {
-  .main-search { width: 100%; }
-  .wgt-search .btn { width: auto; }
-  .wgt-search .main-search .form-control {
-    margin: 0;
-    width: 80%;
-  }
+
 }
