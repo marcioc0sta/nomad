@@ -6,11 +6,14 @@
     .form-control { font-size: 2.5em; }
   }
 
-  .search-content { height: 100vw; }
+  .search-content {
+    height: 100vh;
+    padding-bottom: 30px;
+  }
 
   .img-of-the-day {
     .image,
-    iframe { height: 100vw; }
+    iframe { height: 100vh; }
   }
 
   .search-content .source-link,
