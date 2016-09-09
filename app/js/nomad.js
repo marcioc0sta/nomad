@@ -24,4 +24,14 @@ $(function () {
     $(this).parent().toggleClass('not-visible');
     $(this).toggleClass('text-rotate');
   });
+
+
+  $("body").swipe( {
+    swipe:function(event, right, left) {
+      $('.search-content').toggleClass('not-visible');
+    }
+  });
+
+  $("body").swipe( {fingers:1} );
+
 });
