@@ -25,14 +25,13 @@ $(function () {
     $(this).toggleClass('text-rotate');
   });
 
-
-  $("body").swipe( {
+  // swipe event
+  $("body").swipe({
     swipe:function(event, right, left) {
       $('.search-content').toggleClass('not-visible');
       $('.content-toogle').toggleClass('text-rotate');
     }
   });
-
   $("body").swipe({fingers:1, allowPageScroll:"auto",  threshold:200});
 
 });
