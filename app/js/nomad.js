@@ -32,6 +32,6 @@ $(function () {
       $('.content-toogle').toggleClass('text-rotate');
     }
   });
-  $("body").swipe({fingers:1, allowPageScroll:"auto",  threshold:200});
+  $(".content").swipe({fingers:1, allowPageScroll:"auto",  threshold:200, excludedElements: '.noSwipe'});
 
 });
