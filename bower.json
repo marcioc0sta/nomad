@@ -21,8 +21,7 @@
     "angular": "^1.5.8",
     "jquery-mask-plugin": "^1.14.0",
     "jquery": "^3.1.0",
-    "angular-resource": "^1.5.8",
-    "jquery-touchswipe": "^1.6.18"
+    "angular-resource": "^1.5.8"
   },
   "resolutions": {
     "bootstrap": "^3.3.7"
